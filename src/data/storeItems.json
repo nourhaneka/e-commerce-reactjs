@@ -1,0 +1,39 @@
+[
+    {
+      "id": 1,
+      "name": "Iphone 15 pro",
+      "price": 1000,
+      "imgUrl": "/imgs/iphone-15-pro.jpg",
+      "description":""
+    },
+    {
+      "id": 2,
+      "name": "Iphone 11 pro max",
+      "price": 500,
+      "imgUrl": "/imgs/iphone-11-pro-max.jpg"
+    },
+    {
+      "id": 3,
+      "name": "Iphone 15 pro max",
+      "price": 1119.99,
+      "imgUrl": "/imgs/iphone-15-pro-max.png"
+    },
+    {
+      "id": 4,
+      "name": "Iphone 14",
+      "price": 800,
+      "imgUrl": "/imgs/iphone-14.jpg"
+    },
+    {
+      "id": 5,
+      "name": "IPhone X",
+      "price": 200,
+      "imgUrl": "/imgs/iPhone-x.png"
+    },
+    {
+      "id": 6,
+      "name": "IPhone 13 mini",
+      "price": 500,
+      "imgUrl": "/imgs/iPhone-13.jpg"
+    }
+  ]
