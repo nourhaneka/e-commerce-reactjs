@@ -1,5 +1,7 @@
 import { Card, Button } from "react-bootstrap";
 import { Link } from "react-router-dom";
+import { useShoppingCart } from "../../../context/ShoppingCartContext";
+const { increaseCartQuantity, getItemsQuantity } = useShoppingCart();
 
 export default function ProductCard({ product }) {
     return (

@@ -8,26 +8,27 @@ import ShoppingCartProvider from './context/ShoppingCartContext';
 import Footer from './components/Footer';
 import ProductsPage from "./features/products/pages/ProductsPage";
 import ProductDetailsPage from "./features/products/pages/ProductDetailsPage";
+import NotFound from "./components/NotFound";
+import ShoppingCart from "./components/ShoppingCart";
 const App = () => {
   return (
 
     <ShoppingCartProvider>
-      <Navbar />
-      <Container className='mb-4'>
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/about" element={<About />} />
-        <Route
-  path="/store"
-  element={<ProductsPage />}
-/>
-<Route
-  path="/store/:id"
-  element={<ProductDetailsPage />}/>
-        </Routes>
-      </Container>
-      <Footer />
-    </ShoppingCartProvider>
+  <Navbar />
+
+  <Container className="mb-4">
+    <Routes>
+      <Route path="/" element={<Home />} />
+      <Route path="/about" element={<About />} />
+      <Route path="/store" element={<ProductsPage />} />
+      <Route path="/store/:id" element={<ProductDetailsPage />} />
+      <Route path="*" element={<NotFound />} />
+    </Routes>
+  </Container>
+
+  <Footer />
+  <ShoppingCart />
+</ShoppingCartProvider>
 
   );
 }
