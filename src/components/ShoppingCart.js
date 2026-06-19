@@ -21,8 +21,9 @@ const ShoppingCart = () => {
             Total{" "}
             {formatCurrency(
               cartItems.reduce((total, cartItem) => {
-                const item = storeItems.find((i) => i.id === cartItem.id);
-                return total + (item?.price || 0) * cartItem.quantity;
+                const localItem = storeItems.find((i) => i.id === cartItem.id);
+                const price = cartItem.price !== undefined ? cartItem.price : (localItem?.price || 0);
+                return total + price * cartItem.quantity;
               }, 0)
             )}
           </div>

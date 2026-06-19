@@ -1,32 +1,53 @@
 import { Card, Button } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import { useShoppingCart } from "../../../context/ShoppingCartContext";
-const { increaseCartQuantity, getItemsQuantity } = useShoppingCart();
 
 export default function ProductCard({ product }) {
-    return (
-        <Card className="h-100 shadow-sm">
+  const { increaseCartQuantity, getItemsQuantity } = useShoppingCart();
 
-            <Link
-  to={`/store/${product.id}`}
-  className="text-decoration-none text-dark"
->
-  <Card.Img
-    variant="top"
-    src={product.image}
-    style={{
-      height: "250px",
-      objectFit: "contain",
-      padding: "20px",
-    }}
-  />
+  const quantity = getItemsQuantity(product.id);
 
-  <Card.Body>
-    <Card.Title>
-      {product.title}
-    </Card.Title>
-  </Card.Body>
-</Link>
-        </Card>
-    );
+  return (
+    <Card className="h-100 shadow-sm">
+
+      <Link
+        to={`/store/${product.id}`}
+        className="text-decoration-none text-dark"
+      >
+        <Card.Img
+          variant="top"
+          src={product.image}
+          style={{
+            height: "250px",
+            objectFit: "contain",
+            padding: "20px",
+          }}
+        />
+
+        <Card.Body>
+          <Card.Title>{product.title}</Card.Title>
+        </Card.Body>
+      </Link>
+
+      <Card.Body className="pt-0">
+        {quantity === 0 ? (
+          <Button
+            className="w-100"
+            onClick={() => increaseCartQuantity(product.id, product)}
+          >
+            Add to Cart
+          </Button>
+        ) : (
+          <Button
+            className="w-100"
+            variant="secondary"
+            disabled
+          >
+            In Cart ({quantity})
+          </Button>
+        )}
+      </Card.Body>
+
+    </Card>
+  );
 }

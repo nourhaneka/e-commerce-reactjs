@@ -35,7 +35,7 @@ const Footer = () => {
           </div>
         </div>
         <hr className="bg-white"/>
-        <p className="mb-0">&copy; 2024 PhoneShop. All rights reserved.</p>
+        <p className="mb-0">&copy; 2026 PhoneShop. All rights reserved.</p>
       </div>
     </footer>
   )

@@ -1,5 +1,6 @@
 import React from 'react'
 import { useState} from "react";
+import { Link } from "react-router-dom";
 const Home = () => {
   const [formData, setFormData] = useState({
     name: '',
@@ -32,17 +33,19 @@ const Home = () => {
         <div className="col-md-6">
           <h2>Latest Models</h2>
           <p>Discover the newest releases and top-selling smartphones available in our store. We have a wide variety of phones to suit all your needs.</p>
-          <a href="/store" className="btn btn-primary">Shop Now</a>
+          <Link to="/store" className="btn btn-primary">Shop Now</Link>
         </div>
-        <div className="col-md-6">
-          <img src="../imgs/1-iPhone_12_Hero_2-up_Cropped_Screen__USEN 11.jpg" alt="Phones" className="img-fluid rounded" />
+        <div className="col-md-6 d-flex align-items-center">
+          <img src="/imgs/1-iPhone_12_Hero_2-up_Cropped_Screen__USEN 11.jpg" alt="Phones" className="img-fluid rounded shadow" />
         </div>
       </div>
     </div>
-    <div  className="container mt-5">
-    <img src='../imgs/iPhone-15-Pro-Lineup-Feature.jpg' 
-    style={{ width: "1050px", height: "500px", objectFit: "cover" }}
-    />
+    <div className="container mt-5">
+      <img src='/imgs/iPhone-15-Pro-Lineup-Feature.jpg' 
+        alt="iPhone 15 Pro Lineup Banner"
+        className="img-fluid rounded shadow w-100"
+        style={{ maxHeight: "500px", objectFit: "cover" }}
+      />
     </div>
     <div className="container mt-5">
       <h1>Contact Us</h1>
